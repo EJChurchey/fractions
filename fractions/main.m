@@ -14,6 +14,7 @@
 - (void) setNum: (int) n;
 - (void) setDen: (int) d;
 - (int) divide;
+- (id) init: (int) n over : (int) d;
 
 @end
 
@@ -22,6 +23,14 @@
 {
     int num;
     int den;
+}
+
+- (id) init: (int) n over:(int)d; {
+    
+    num = n;
+    den = d;
+    return self;
+    
 }
 
 - (int) divide {
@@ -45,10 +54,9 @@ int main(int argc, const char * argv[]) {
     
         Fraction * f = [Fraction alloc];
         
-        f = [f init];
+        f = [f init:10 over:5];
         
-        [f setNum:100];
-        [f setDen:10];
+    
         
         [f print];
         
